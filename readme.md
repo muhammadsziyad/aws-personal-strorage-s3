@@ -1,5 +1,25 @@
 # Launch a Personal Cloud Storage System with Amazon S3
 
+```mermaid
+graph TD
+    A[User] -->|Uploads/Downloads Files| B[Application]
+    B -->|Interacts with| C[S3 Bucket]
+    C -->|Stores/Retrieves Files| B
+    B -->|Uses IAM Roles/Policies| D[IAM Roles/Policies]
+
+    subgraph AWS S3 Setup
+        C
+        D
+    end
+
+    subgraph Application Flow
+        B
+    end
+
+    style AWS S3 Setup fill:#f9f,stroke:#333,stroke-width:2px
+    style Application Flow fill:#ccf,stroke:#333,stroke-width:2px
+```
+
 This project helps you set up a personal cloud storage system using AWS S3. Amazon S3 (Simple Storage Service) provides secure, durable, and scalable cloud storage where 
 you can store and retrieve any amount of data at any time.
 
